@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = "/" method = "post">
+    <label for= "Input_text" > variable1</label>
+    <input type="text" name="input_text1" class="enter" id="input-text1" required/>
+    <label for= "Input_text" > variable2</label>
+    <input type="text" name="input_text2" class="enter" id="input-text2" required/>
+
+    <input type="submit" class = "submit" value = "submit">
+    {% if add %}
+<h2>Addition:</h2>
+<p>{{ add }}</p>
+    {% endif %}
+-->
+</form>
+</body>
+</html>
