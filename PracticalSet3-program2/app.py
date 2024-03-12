@@ -8,7 +8,8 @@ app  = Flask(__name__)
 app.config['SECRET_KEY'] = 'hardsecretkey'
 
 #SqlAlchemy Database Configuration With Mysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/mydatabase_python'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/mydatabase_python'
+app.config['SQLALCHEMY_DATABASE_URI'] = ''sqlite:///user_info.db''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
