@@ -1,0 +1,33 @@
+from flask import Flask, render_template
+import mysql.connector
+
+app = Flask(__name__)
+
+# MySQL database connection configuration
+db_config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'root',
+    'database': 'mydatabase_python'
+}
+
+# Create a connection to the MySQL database
+conn = mysql.connector.connect(**db_config)
+
+
+@app.route('/')
+def index():
+    # Use the connection to execute SQL queries
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM person")
+    rows = cursor.fetchall()
+
+    # Close the cursor
+    cursor.close()
+
+    # Render the HTML template and pass the data
+    return render_template('person.html', rows=rows)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
